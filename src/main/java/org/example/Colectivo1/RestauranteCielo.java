@@ -7,6 +7,9 @@ public class RestauranteCielo {
         Integer menuOption=null;
         String colorAzul = "\u001B[96m";
         String colorReset = "\u001B[0m";
+        ArrayList <Object> platos=new ArrayList<>();
+
+
 
         //PROCESO
         System.out.println(colorAzul + "\n******************");
@@ -25,7 +28,7 @@ public class RestauranteCielo {
         menuOption = keyEntry.nextInt();
 
         while(true){
-
+            HashMap<String,Object> diccionario = new HashMap<>();
 
 
                 if(menuOption==1){
