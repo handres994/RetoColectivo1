@@ -8,11 +8,15 @@ public class RestauranteCielo {
         String colorAzul = "\u001B[96m";
         String colorReset = "\u001B[0m";
 
-        //PROCESO
-        System.out.println(colorAzul + "\n******************");
-        System.out.println("***** Restaurante El Cielo *****");
-        System.out.println("******************");
 
+
+        boolean entradaValida = false;
+
+        //PROCESO
+        System.out.println(colorAzul + "\n*********************************");
+        System.out.println("***** Restaurante El Cielo *****");
+        System.out.println("*********************************");
+        
         System.out.println("\n☁️👕 Bienvenido al Gestor del CIELO ☁️\n");
         System.out.println("✨ ¿Qué deseas realizar?");
         System.out.println("1️⃣  Registrar empleado 🧑‍🍳📝");
@@ -21,8 +25,23 @@ public class RestauranteCielo {
         System.out.println("4️⃣  Ver platos 🍽️📖");
         System.out.println("5️⃣  Presiona 5 para SALIR ❌🚪)" + colorReset);
 
-        System.out.println("\nDigite una opcion");
-        menuOption = keyEntry.nextInt();
+        while (!entradaValida) {
+
+            try {
+                System.out.println("\nDigita una opcion: ");
+                menuOption = keyEntry.nextInt();
+
+                if (menuOption >= 1 && menuOption <= 5) {
+                    entradaValida = true;
+                } else {
+                    System.out.println("¡Error! La opción debe estar entre 1 y 5.\n");
+                }
+            }catch (InputMismatchException e){
+                System.out.println("¡Error! Debes ingresar un número entero.\n");
+                keyEntry.nextLine();
+            }
+
+        }
 
         while(true){
 
@@ -40,9 +59,23 @@ public class RestauranteCielo {
 
                     break;
                 }
+            while (!entradaValida) {
 
+                try {
                 System.out.println("\nAhora digita otra opcion: ");
                 menuOption = keyEntry.nextInt();
+
+                    if (menuOption >= 1 && menuOption <= 5) {
+                        entradaValida = true;
+                    } else {
+                        System.out.println("¡Error! La opción debe estar entre 1 y 5.\n");
+                    }
+                }catch (InputMismatchException e){
+                    System.out.println("¡Error! Debes ingresar un número entero.\n");
+                    keyEntry.nextLine();
+                }
+
+            }
 
 
 
